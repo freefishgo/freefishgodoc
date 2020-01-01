@@ -38,8 +38,3 @@ func (user *userController) DoLoginPost(u *userInfo) {
 func (user *userController) VueTest() {
 	user.UseTplPath()
 }
-
-// 重写 指定动作的路由 该方法会在路由注册时调用
-func (user *userController) OverwriteRouter() []*mvc.ControllerActionRouter {
-	return nil
-}

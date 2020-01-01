@@ -16,11 +16,6 @@ func (back *backController) Index() {
 	back.UseTplPath()
 }
 
-// 重写 指定动作的路由 该方法会在路由注册时调用
-func (back *backController) OverwriteRouter() []*mvc.ControllerActionRouter {
-	return nil
-}
-
 // 控制器执行前调用
 func (back *backController) Prepare() {
 	sv := back.Response.GetSession("userinfo")
