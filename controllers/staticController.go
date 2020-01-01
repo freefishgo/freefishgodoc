@@ -18,7 +18,7 @@ func init() {
 	static.ActionRouterList = append(static.ActionRouterList,
 		&mvc.ActionRouter{RouterPattern: "static/{path:allString}",
 			ControllerActionFuncName: "StaticFile"})
-	mvc.AddHandlers(&staticController{})
+	mvc.AddHandlers(&static)
 }
 
 type data struct {
