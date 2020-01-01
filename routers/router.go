@@ -1,6 +1,7 @@
 package routers
 
 import (
+	_ "freefishgodoc/controllers"
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
 )
 
