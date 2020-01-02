@@ -1,0 +1,31 @@
+#headDiv{
+    position: fixed;
+    left: 0px;
+    top:0px;
+    width: 110%;
+    border:lightgray 1px solid;
+    z-index: 9999;
+    background-color: whitesmoke;
+}
+#logoStyle{
+    display: inline;
+    margin-left: 25%;
+}
+#head li {
+    display:inline;
+    margin: 0;
+    padding: 0;
+    color: #428bca;
+}
+#head li h4{
+    display:inline;
+    margin-left: 20px;
+    padding: 0;
+    cursor:pointer ;
+}
+body{
+    /*background-color: #f5f5f5;*/
+}
+.headActive{
+    color: red;
+}
