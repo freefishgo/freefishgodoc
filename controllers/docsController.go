@@ -1,7 +1,10 @@
 package controllers
 
 import (
+	"freefishgodoc/models"
+	"freefishgodoc/tools"
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
+	"html/template"
 )
 
 type docsController struct {
@@ -13,10 +16,16 @@ func init() {
 }
 
 func (docs *docsController) Index() {
-	docs.LayoutPath = "layout/homeLayout.fish"
-	docs.Data["homeHeadLi"] = "homeHeadLi"
-	docs.Data["docsTree"] = "docsTree"
+	var cocsTrees = models.GetDocsTree()
+	docs.Data["docsTree"] = template.HTML(tools.EachDocsTree(cocsTrees))
 	docs.Data["centent"] = "我是内容"
+	tp := docs.Query["type"]
+	if tp != nil && tp == "xhr" {
+		docs.UseTplPath()
+		return
+	}
+	docs.LayoutPath = "layout/homeLayout.fish"
+	docs.Data["homeHeadLi"] = models.GetHomeHeadList("开发文档")
 	docs.UseTplPath()
 }
 

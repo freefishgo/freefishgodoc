@@ -16,12 +16,14 @@
 // 		}
 // 	});
 // });
+
 $(function () {
-	$("#head li h4").click(function () {
-		var h=$("#head li h4")
-		h.each(function () {
-			$(this).removeClass("headActive")
-		})
-		$(this).addClass("headActive")
-	})
+    $(".tree ui li a").click(function () {
+        var h=$("#head li h4")
+        h.each(function () {
+            $(this).removeClass("treeActive")
+        })
+        $(this).addClass("treeActive")
+    })
+    
 })

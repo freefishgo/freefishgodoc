@@ -1,15 +1,17 @@
 #headDiv{
     position: fixed;
-    left: 0px;
+    /*left: 0px;*/
     top:0px;
+    left: auto;
     width: 110%;
-    border:lightgray 1px solid;
     z-index: 9999;
     background-color: whitesmoke;
+    padding: 5px 0px 20px 0px;
 }
 #logoStyle{
     display: inline;
-    margin-left: 25%;
+    margin-left: 17%;
+    padding: 15px 15px 10px 15px;
 }
 #head li {
     display:inline;
@@ -17,11 +19,17 @@
     padding: 0;
     color: #428bca;
 }
-#head li h4{
+#head li  h4{
     display:inline;
-    margin-left: 20px;
-    padding: 0;
+    margin-left: 29px;
     cursor:pointer ;
+    padding: 15px 15px 15px 15px;
+}
+/*#head li h4 a{*/
+/*    text-decoration:none;*/
+/*}*/
+#head li h4 a:hover{
+    background-color: gray;
 }
 body{
     /*background-color: #f5f5f5;*/
