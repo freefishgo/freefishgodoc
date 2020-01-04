@@ -5,6 +5,7 @@ import (
 	"freefishgodoc/tools"
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
 	"html/template"
+	"strings"
 )
 
 type docsController struct {
@@ -12,16 +13,29 @@ type docsController struct {
 }
 
 func init() {
-	mvc.AddHandlers(&docsController{})
+	docs:=&docsController{}
+	docs.ActionRouterList=[]*mvc.ActionRouter{
+		{RouterPattern:"{Controller}/{path:allString}",
+		ControllerActionFuncName:"Index"},
+		{RouterPattern:"{Controller}",ControllerActionFuncName:"Index"}}
+	mvc.AddHandlers(docs)
 }
 
 func (docs *docsController) Index() {
 	var cocsTrees = models.GetDocsTree()
-	docs.Data["docsTree"] = template.HTML(tools.EachDocsTree(cocsTrees))
+	docs.Data["docsTree"] = template.HTML(tools.EachDocsTree(cocsTrees,"0"))
 	docs.Data["centent"] = "我是内容"
 	tp := docs.Query["type"]
-	if tp != nil && tp == "xhr" {
+	path:= docs.Query["path"]
+	if path!=nil{
+		pathStr := strings.Trim(path.(string),"/")
+		strings.Split(pathStr,"/")
+	}
+	if tp == "xhr" {
 		docs.UseTplPath()
+		return
+	} else if tp== "xhrSon" {
+		docs.Response.Write([]byte(docs.Data["centent"].(string)))
 		return
 	}
 	docs.LayoutPath = "layout/homeLayout.fish"

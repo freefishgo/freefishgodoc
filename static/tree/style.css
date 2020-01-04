@@ -16,6 +16,9 @@
 		.tree span a{
 			text-decoration:none;
 		}
-		.treeActive{
-			background-color: red;
+		.tree .treeActive{
+			color: red;
+		}
+		.tree .treeClick{
+			cursor: pointer;
 		}

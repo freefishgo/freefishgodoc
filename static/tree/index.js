@@ -18,8 +18,8 @@
 // });
 
 $(function () {
-    $(".tree ui li a").click(function () {
-        var h=$("#head li h4")
+    $(".treeClick").click(function () {
+        var h=$(".treeClick")
         h.each(function () {
             $(this).removeClass("treeActive")
         })

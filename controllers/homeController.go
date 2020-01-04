@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"freefishgodoc/models"
+
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
 )
 
@@ -17,6 +18,13 @@ func init() {
 
 // Index为{Action}的值 该方法的默认路由为/Home/Index 最后的单词为请求方式  该例子为Post请求
 func (home *HomeController) Index() {
+	tp := home.Query["type"]
+	if tp != nil && tp == "xhr" {
+		home.UseTplPath()
+		return
+	}
+	//d := http.Server{Addr: ""}
+	//log.Println(dd)
 	home.LayoutPath = "layout/homeLayout.fish"
 	home.Data["homeHeadLi"] = models.GetHomeHeadList("首页")
 	//var cocsTrees=models.GetDocsTree()

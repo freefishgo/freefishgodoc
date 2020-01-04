@@ -1,10 +1,11 @@
 package controllers
 
 import (
-	"github.com/freefishgo/freefishgo/middlewares/mvc"
 	"io"
 	"os"
 	"path/filepath"
+
+	"github.com/freefishgo/freefishgo/middlewares/mvc"
 )
 
 type staticController struct {
@@ -15,9 +16,9 @@ type staticController struct {
 func init() {
 	static := staticController{}
 	// 重写 指定动作的路由 该方法会在路由注册时调用
-	static.ActionRouterList = append(static.ActionRouterList,
-		&mvc.ActionRouter{RouterPattern: "static/{path:allString}",
-			ControllerActionFuncName: "StaticFile"})
+	//static.ActionRouterList = append(static.ActionRouterList,
+	//	&mvc.ActionRouter{RouterPattern: "static/{path:allString}",
+	//		ControllerActionFuncName: "StaticFile"})
 	mvc.AddHandlers(&static)
 }
 
