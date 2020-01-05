@@ -3,6 +3,7 @@ package main
 import (
 	_ "freefishgodoc/conf"
 	_ "freefishgodoc/routers"
+
 	"github.com/freefishgo/freefishgo"
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
 	"github.com/freefishgo/freefishgo/middlewares/printTimeMiddleware"

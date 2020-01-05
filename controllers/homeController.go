@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"freefishgodoc/models"
-
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
 )
 
@@ -23,8 +22,8 @@ func (home *HomeController) Index() {
 		home.UseTplPath()
 		return
 	}
-	//d := http.Server{Addr: ""}
 	//log.Println(dd)
+	//http.ServeTLS(l, handler, certFile, keyFile)
 	home.LayoutPath = "layout/homeLayout.fish"
 	home.Data["homeHeadLi"] = models.GetHomeHeadList("首页")
 	//var cocsTrees=models.GetDocsTree()
