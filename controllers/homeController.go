@@ -2,10 +2,11 @@ package controllers
 
 import (
 	"freefishgodoc/models"
+
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
 )
 
-// 实现mvc控制器的处理Main为控制器 {Controller}的值
+// HomeController 实现mvc控制器的处理Main为控制器 {Controller}的值
 type HomeController struct {
 	mvc.Controller
 }
@@ -15,7 +16,7 @@ func init() {
 	mvc.AddHandlers(&HomeController{})
 }
 
-// Index为{Action}的值 该方法的默认路由为/Home/Index 最后的单词为请求方式  该例子为Post请求
+// Index 为{Action}的值 该方法的默认路由为/Home/Index 最后的单词为请求方式  该例子为Post请求
 func (home *HomeController) Index() {
 	tp := home.Query["type"]
 	if tp != nil && tp == "xhr" {

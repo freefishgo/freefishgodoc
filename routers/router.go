@@ -1,7 +1,9 @@
 package routers
 
 import (
+	// 控制器注入到默认的处理器中
 	_ "freefishgodoc/controllers"
+
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
 )
 

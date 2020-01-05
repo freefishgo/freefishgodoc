@@ -3,9 +3,10 @@ package controllers
 import (
 	"freefishgodoc/models"
 	"freefishgodoc/tools"
-	"github.com/freefishgo/freefishgo/middlewares/mvc"
 	"html/template"
 	"strings"
+
+	"github.com/freefishgo/freefishgo/middlewares/mvc"
 )
 
 type docsController struct {
@@ -13,28 +14,28 @@ type docsController struct {
 }
 
 func init() {
-	docs:=&docsController{}
-	docs.ActionRouterList=[]*mvc.ActionRouter{
-		{RouterPattern:"{Controller}/{path:allString}",
-		ControllerActionFuncName:"Index"},
-		{RouterPattern:"{Controller}",ControllerActionFuncName:"Index"}}
+	docs := &docsController{}
+	docs.ActionRouterList = []*mvc.ActionRouter{
+		{RouterPattern: "{Controller}/{path:allString}",
+			ControllerActionFuncName: "Index"},
+		{RouterPattern: "{Controller}", ControllerActionFuncName: "Index"}}
 	mvc.AddHandlers(docs)
 }
 
 func (docs *docsController) Index() {
 	var cocsTrees = models.GetDocsTree()
-	docs.Data["docsTree"] = template.HTML(tools.EachDocsTree(cocsTrees,"0"))
+	docs.Data["docsTree"] = template.HTML(tools.EachDocsTree(cocsTrees, "0"))
 	docs.Data["centent"] = "我是内容"
 	tp := docs.Query["type"]
-	path:= docs.Query["path"]
-	if path!=nil{
-		pathStr := strings.Trim(path.(string),"/")
-		strings.Split(pathStr,"/")
+	path := docs.Query["path"]
+	if path != nil {
+		pathStr := strings.Trim(path.(string), "/")
+		strings.Split(pathStr, "/")
 	}
 	if tp == "xhr" {
 		docs.UseTplPath()
 		return
-	} else if tp== "xhrSon" {
+	} else if tp == "xhrSon" {
 		docs.Response.Write([]byte(docs.Data["centent"].(string)))
 		return
 	}

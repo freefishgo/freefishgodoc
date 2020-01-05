@@ -12,6 +12,7 @@ func init() {
 	mvc.AddHandlers(&backController{})
 }
 
+// 后台主页
 func (back *backController) Index() {
 	back.UseTplPath()
 }
