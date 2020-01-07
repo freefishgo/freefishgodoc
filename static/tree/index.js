@@ -1,3 +1,5 @@
+/// <reference path="../js/jquery-3.3.1.min.js" />
+/// <reference path="../js/share.js" />
 // $(function() {
 // 	$(".tree span").append($("<i class='fa fa-plus fa-fw'></i>"));
 // 	//$(".tree>ul ul").hide();
@@ -16,14 +18,22 @@
 // 		}
 // 	});
 // });
-
 $(function () {
     $(".treeClick").click(function () {
+        var href= $(this).attr("href")
+        $.get(href,function(data,std){
+            $("#ArticleCentent").html(data)
+        });
+        updateUrl("wenh",href.split("?")[0])
         var h=$(".treeClick")
         h.each(function () {
             $(this).removeClass("treeActive")
         })
         $(this).addClass("treeActive")
     })
-    
+    $("#logoStyle").dblclick(function(){
+        $.get("/user/getedit",function(data,std){
+            $("#editDocs").html(data);
+        })
+    })
 })

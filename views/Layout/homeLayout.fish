@@ -14,15 +14,17 @@
 <script src="/js/homeLayout.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <body>
-    <div class="container" id="headDiv" style="border:lightgray 1px solid;height: 57px">
-        <nav>
-            <div>
-                <h1 id="logoStyle">FreeFishGo</h1>
-                <ul id="head" style="display: inline">
-                    {{{range $k, $v := .homeHeadLi}}} <li><h4 {{{if $v.Active}}} class="headActive" {{{end}}} href="{{{$v.Path}}}?type=xhr">{{{$v.Name}}}</h4></li> {{{end}}}
-                </ul>
-            </div>
-        </nav>
+    <div class="row" id="headDiv">
+        <div class="container  main-container">
+            <nav>
+                <div>
+                    <h1 id="logoStyle">FreeFishGo</h1>
+                    <ul id="head" style="display: inline">
+                        {{{range $k, $v := .homeHeadLi}}} <li><h4 {{{if $v.Active}}} class="headActive" {{{end}}} href="{{{$v.Path}}}?type=xhr">{{{$v.Name}}}</h4></li> {{{end}}}
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </div>
     <div class="row" style="margin-top: 80px"></div>
     <div id="homeContent" class="container main-container">

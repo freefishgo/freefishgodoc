@@ -1,10 +1,2 @@
-github.com/freefishgo/freefishgo v0.0.0-20200101082657-d77ff6ac7732 h1:E757bOeVV9GtZKXV0uoiJy8JR6oAQBwKfXeWTXJ/+lw=
-github.com/freefishgo/freefishgo v0.0.0-20200101082657-d77ff6ac7732/go.mod h1:EQgSrCm4SWNnqnh4XOWImfgKhn0CJjClsYL2FrJmIqk=
-github.com/freefishgo/freefishgo v0.0.0-20200103020624-e790c5062acf h1:oy/Qe6jFmt8Tw1bvFS5NVHUuJuhZgBckS9JY4jsKiZQ=
-github.com/freefishgo/freefishgo v0.0.0-20200103020624-e790c5062acf/go.mod h1:EQgSrCm4SWNnqnh4XOWImfgKhn0CJjClsYL2FrJmIqk=
-github.com/freefishgo/freefishgo v0.0.0-20200103150639-c5119633936e h1:2rHuPkPfP1PnHqdj3v/BMVvLLvd/sw3vuCiSRlqE9YQ=
-github.com/freefishgo/freefishgo v0.0.0-20200103150639-c5119633936e/go.mod h1:EQgSrCm4SWNnqnh4XOWImfgKhn0CJjClsYL2FrJmIqk=
-github.com/freefishgo/freefishgo v0.0.0-20200104102712-f32f7d75d8f4 h1:IKq8PbhyRflPu9OHQkxxj9nkgZkJlCxix7q3GkVBYjI=
-github.com/freefishgo/freefishgo v0.0.0-20200104102712-f32f7d75d8f4/go.mod h1:EQgSrCm4SWNnqnh4XOWImfgKhn0CJjClsYL2FrJmIqk=
 github.com/gorilla/websocket v1.4.1 h1:q7AeDBpnBk8AogcD4DSag/Ukw/KV+YhzLj2bP5HvKCM=
 github.com/gorilla/websocket v1.4.1/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=

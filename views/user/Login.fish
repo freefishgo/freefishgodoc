@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>login</title>
-    <link rel="shortcut icon" href="/static/img/fish.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/fish.ico" type="image/x-icon" />
     <style type="text/css">
         *{
             margin: 0;
@@ -115,12 +115,12 @@
         </div>
         <!-- 输入框 -->
         <div class="lgD">
-            <img src="/static/img/fish.jpg" width="20" height="20" alt=""/>
+            <img src="/img/fish.jpg" width="20" height="20" alt=""/>
             <input type="text"
                    placeholder="输入用户名" v-model="username" />
         </div>
         <div class="lgD">
-            <img src="/static/img/fish.jpg" width="20" height="20" alt=""/>
+            <img src="/img/fish.jpg" width="20" height="20" alt=""/>
             <input type="password"
                    placeholder="输入用户密码" v-model="pwd" />
         </div>
@@ -130,9 +130,9 @@
     </div>
 </div>
 </body>
-<script src="/static/js/vue.min.js"></script>
-<script src="/static/js/axios.min.js"></script>
-<script src="/static/js/share.js"></script>
+<script src="/js/vue.min.js"></script>
+<script src="/js/axios.min.js"></script>
+<script src="/js/share.js"></script>
 <script>
     new Vue({
         el: '#app',

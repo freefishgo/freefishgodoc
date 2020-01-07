@@ -5,3 +5,6 @@
 .idea/vcs.xml
 .vscode/launch.json
 go_build_freefishgodoc.exe
+.idea/workspace.xml
+debug
+.gitignore
