@@ -8,3 +8,4 @@ go_build_freefishgodoc.exe
 .idea/workspace.xml
 debug
 .gitignore
+controllers/mytestStateController.go
