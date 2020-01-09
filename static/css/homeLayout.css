@@ -12,8 +12,12 @@
 }
 #logoStyle{
     display: inline;
-    padding: 15px 10px 0px 15px;
+    padding: 0px 10px 0px 15px;
     line-height: 50px;
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
 }
 #head li {
     display:inline;

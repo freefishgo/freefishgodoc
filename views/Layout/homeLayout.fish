@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="/tree/style.css" />
     <link rel="stylesheet" href="/css/homeLayout.css"/>
+    <link href="/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
 </head>
 <script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/js/share.js"></script>
 <script src="/js/homeLayout.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/froala_editor.pkgd.min.js"></script>
 <body>
     <div class="row" id="headDiv">
         <div class="container  main-container">
             <nav>
                 <div>
-                    <h1 id="logoStyle">FreeFishGo</h1>
+                    <h1 id="logoStyle" style="padding-left: 0px;">FreeFishGo</h1>
                     <ul id="head" style="display: inline">
                         {{{range $k, $v := .homeHeadLi}}} <li><h4 {{{if $v.Active}}} class="headActive" {{{end}}} href="{{{$v.Path}}}?type=xhr">{{{$v.Name}}}</h4></li> {{{end}}}
                     </ul>

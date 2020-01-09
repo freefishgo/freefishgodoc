@@ -1,22 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
-    <script src="/static/js/vue.min.js"></script>
+    <title>FreeFishGo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
-<div id="app">
-    <p>{{ message }}</p>
-</div>
-
-<script>
-    new Vue({
-        el: '#app',
-        data: {
-            message: 'Hello Vue.js!'
-        }
-    })
-</script>
+	<h1>欢迎使用 fishFreeGoMvc</h1>
 </body>
 </html>

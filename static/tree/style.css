@@ -22,3 +22,7 @@
 		.tree .treeClick{
 			cursor: pointer;
 		}
+		#ArticleCentent{
+			padding-left: 5px;
+			padding-right: 0px;
+		}

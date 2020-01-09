@@ -13,7 +13,12 @@ type HomeController struct {
 
 // 注册控制器
 func init() {
-	mvc.AddHandlers(&HomeController{})
+	home := &HomeController{}
+	home.ActionRouterList = []*mvc.ActionRouter{
+		{RouterPattern: "{Controller}/",
+			ControllerActionFuncName: "Index"},
+		{RouterPattern: "{Controller}", ControllerActionFuncName: "Index"}}
+	mvc.AddHandlers(home)
 }
 
 // Index 为{Action}的值 该方法的默认路由为/Home/Index 最后的单词为请求方式  该例子为Post请求
@@ -23,13 +28,7 @@ func (home *HomeController) Index() {
 		home.UseTplPath()
 		return
 	}
-	//log.Println(dd)
-	//http.ServeTLS(l, handler, certFile, keyFile)
-	home.LayoutPath = "layout/homeLayout.fish"
 	home.Data["homeHeadLi"] = models.GetHomeHeadList("首页")
-	//var cocsTrees=models.GetDocsTree()
-
-	//home.Data["docsTree"] =template.HTML(tools.EachDocsTree(cocsTrees))
-	//home.Data["centent"] = "我是内容"
+	home.LayoutPath = "layout/homeLayout.fish"
 	home.UseTplPath()
 }
