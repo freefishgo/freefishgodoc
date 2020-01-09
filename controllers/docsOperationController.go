@@ -73,5 +73,4 @@ func (docsOperation *docsOperationController) Prepare() {
 		docsOperation.Response.Write([]byte("登录过期了"))
 		docsOperation.SkipController()
 	}
-	//log.Println("子类的Prepare")
 }
