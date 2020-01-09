@@ -37,9 +37,6 @@
 #head li h4 a:hover{
     background-color: gray;
 }
-body{
-    /*background-color: #f5f5f5;*/
-}
 .headActive{
     color: red;
 }
