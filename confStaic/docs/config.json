@@ -1,0 +1,22 @@
+{
+	"Name": "开发文档",
+	"Path": "",
+	"NextDocsTree": [
+		{
+			"Name": "我喜欢现在的名字",
+			"Path": "",
+			"NextDocsTree": [
+				{
+					"Name": "简介",
+					"Path": "",
+					"NextDocsTree": null
+				},
+				{
+					"Name": "安装升级",
+					"Path": "",
+					"NextDocsTree": null
+				}
+			]
+		}
+	]
+}
