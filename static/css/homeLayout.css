@@ -25,11 +25,14 @@
     padding: 0;
     color: #428bca;
 }
-#head li  h4{
+a:link{
+    text-decoration:none;
+}
+#head li  a{
     display:inline;
     margin-left: 2.5%;
     cursor:pointer ;
-    padding: 13px 10px 5px 10px;
+    padding: 13px 10px 5px 10px;    
 }
 /*#head li h4 a{*/
 /*    text-decoration:none;*/
@@ -37,7 +40,7 @@
 #head li h4 a:hover{
     background-color: gray;
 }
-.headActive{
+#head .headActive{
     color: red;
 }
 #footerSon{
@@ -55,3 +58,10 @@
     height: 27px;
     background-color: #f0f0f0;
 }
+
+.fr-wrapper > div[style*='z-index: 9999'] {
+    /*position: absolute;
+    top: -10000px;
+    opacity: 0;*/
+    display: none;
+    }

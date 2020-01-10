@@ -36,7 +36,7 @@ func (blog *blogController) Index() {
 		blog.UseTplPath()
 		return
 	}
-	blog.LayoutPath = "layout/homeLayout.fish"
+	blog.LayoutPath = "Layout/homeLayout.fish"
 	blog.Data["homeHeadLi"] = models.GetHomeHeadList("官方博客")
 	blog.UseTplPath()
 }

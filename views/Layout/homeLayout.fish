@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>freeFishGo</title>
     <link rel="shortcut icon" href="/img/fish.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/tree/style.css" />
     <link rel="stylesheet" href="/css/homeLayout.css"/>
     <link href="/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
@@ -22,7 +22,7 @@
                 <div>
                     <h1 id="logoStyle" style="padding-left: 0px;">freeFishGo</h1>
                     <ul id="head" style="display: inline">
-                        {{{range $k, $v := .homeHeadLi}}}  {{{if $v.Active}}} <li><h4 class="headActive"  href="{{{$v.Path}}}?type=xhr">{{{$v.Name}}}</h4> </li> <script>document.title ='{{{$v.Name}}}';</script>  {{{else}}} <li>  <h4 href="{{{$v.Path}}}?type=xhr">{{{$v.Name}}}</h4> {{{end}}}</li> {{{end}}}
+                        {{{range $k, $v := .homeHeadLi}}}  {{{if $v.Active}}} <li><a class="headActive heada"  href="{{{$v.Path}}}"  onclick="return false">{{{$v.Name}}}</a> </li> <script>document.title ='{{{$v.Name}}}';</script>  {{{else}}} <li>  <a href="{{{$v.Path}}}" class="heada" onclick="return false">{{{$v.Name}}}</a> {{{end}}}</li> {{{end}}}
                     </ul>
                 </div>
             </nav>

@@ -36,7 +36,7 @@ func (community *communityController) Index() {
 		community.UseTplPath()
 		return
 	}
-	community.LayoutPath = "layout/homeLayout.fish"
+	community.LayoutPath = "Layout/homeLayout.fish"
 	community.Data["homeHeadLi"] = models.GetHomeHeadList("开发者社区")
 	community.UseTplPath()
 }

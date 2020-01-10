@@ -9,14 +9,12 @@ $(function () {
             }
         })
     });
-    $("#head li h4").click(function () {
-        var h=$("#head li h4")
-        h.each(function () {
-            $(this).removeClass("headActive")
-        })
+    $("#head .heada").click(function () {
+        var h=$("#head .heada")
+        h.removeClass("headActive")
         $(this).addClass("headActive")
         url=$(this).attr("href")
-        $.get(url,function (result,std) {
+        $.get(url+"?type=xhr",function (result,std) {
             $("#homeContent").html(result)
         })
         updateUrl($(this).text(),url.split("?")[0])

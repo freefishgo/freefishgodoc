@@ -59,16 +59,17 @@ $(function(){
         var html='<textarea id="ArticleCententArea"></textarea><button id="save" class="btn btn-default">保存</button>';
         $("#ArticleCentent").html(html);
         editor=new FroalaEditor('#ArticleCententArea');
+        $('#myModal').modal('hide');
         $.get("/docs/"+nowIndex+"?type=xhrSon",function(data,std){
             editor.html.set(data)
         });
-        $('#myModal').modal('hide');
         $("#save").click(function(){
             var obj={};
             obj.index=nowIndex;
             obj.docsname=$("#docName").text();
             obj.content=editor.html.get();
             $.post("/docsOperation/UpdateDocContent",obj,function(data,std){
+                editor.destroy();
                 location.href="/docs/"+nowIndex
                 $('#myModal').modal('hide');
             });
@@ -80,7 +81,6 @@ $(function(){
         $this.css('display', 'block');
         $modal_dialog.css({'margin-top': Math.max(0, ($(window).height() - $modal_dialog.height()) / 2) });       
     });
-
     $("#bianj").click(function(){
         $("#bianj").hide();
         var html='<textarea id="contentArticle"></textarea><button id="saveContent" class="btn btn-default">保存</button>';
@@ -94,6 +94,7 @@ $(function(){
             var obj={};
             obj.content=editor.html.get();
             $.post(href+"/save",obj,function(data,std){
+                editor.destroy()
                 location.href=href;
             });
         }); 

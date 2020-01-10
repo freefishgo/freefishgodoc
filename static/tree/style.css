@@ -18,6 +18,9 @@
 		.tree span a{
 			text-decoration:none;
 		}
+		a:link{
+			text-decoration:none;
+		}
 		.tree .treeActive{
 			color: red;
 		}
@@ -27,4 +30,7 @@
 		#ArticleCentent{
 			padding-left: 5px;
 			padding-right: 0px;
+		}
+		.tree span a{
+			color: white;
 		}

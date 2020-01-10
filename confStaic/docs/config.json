@@ -1,22 +1,32 @@
 {
 	"Name": "开发文档",
-	"Path": "",
+	"Path": "confStaic/docs/Article/69fca380ef7910eec0d07eb05fe9def6.fish",
 	"NextDocsTree": [
 		{
-			"Name": "我喜欢现在的名字",
+			"Name": "不喜欢",
 			"Path": "",
 			"NextDocsTree": [
 				{
 					"Name": "简介",
-					"Path": "",
+					"Path": "confStaic/docs/Article/4ed96c6803d1a25bc8b4dd8782163654.fish",
 					"NextDocsTree": null
 				},
 				{
 					"Name": "安装升级",
-					"Path": "",
+					"Path": "confStaic/docs/Article/750f8b6786f3bf050ec5671654ab051f.fish",
 					"NextDocsTree": null
 				}
 			]
+		},
+		{
+			"Name": "hjojo",
+			"Path": "",
+			"NextDocsTree": null
+		},
+		{
+			"Name": "khkhk",
+			"Path": "confStaic/docs/Article/77e039261c93993a2103bfb01be1e5c5.fish",
+			"NextDocsTree": null
 		}
 	]
 }

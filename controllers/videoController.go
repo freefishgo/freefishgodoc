@@ -36,7 +36,7 @@ func (video *videoController) Index() {
 		video.UseTplPath()
 		return
 	}
-	video.LayoutPath = "layout/homeLayout.fish"
+	video.LayoutPath = "Layout/homeLayout.fish"
 	video.Data["homeHeadLi"] = models.GetHomeHeadList("视频教程")
 	video.UseTplPath()
 }
