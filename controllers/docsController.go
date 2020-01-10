@@ -29,7 +29,7 @@ func (docs *docsController) Index() {
 		path = "0"
 	}
 	path = strings.Trim(path.(string), "/")
-	var cocsTrees = models.GetDocsTree()
+	var cocsTrees = tools.GetDocsTree()
 	b, ok := tools.GetArticle(cocsTrees, path.(string))
 	if ok {
 		docs.Data["content"] = template.HTML(b)

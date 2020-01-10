@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"freefishgodoc/models"
 	"freefishgodoc/tools"
 
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
@@ -24,28 +23,28 @@ type docsTreeHelper struct {
 
 // 删除开发文档的文档树
 func (docs *docsOperationController) DeleteDoc(data *docsTreeHelper) {
-	tree := models.GetDocsTree()
+	tree := tools.GetDocsTree()
 	ok := tools.DeleteTree(tree, data.Index, data.Docsname)
 	docs.Response.WriteJson(ok)
 }
 
 // 添加子文档
 func (docs *docsOperationController) AddSonDoc(data *docsTreeHelper) {
-	tree := models.GetDocsTree()
+	tree := tools.GetDocsTree()
 	ok := tools.AddSonDoc(tree, data.Index, data.Docsname)
 	docs.Response.WriteJson(ok)
 }
 
 // 更新开发文档的文档树文章
 func (docs *docsOperationController) UpdateDocContentPost(data *docsTreeHelper) {
-	tree := models.GetDocsTree()
+	tree := tools.GetDocsTree()
 	ok := tools.UpdateDocContent(tree, data.Index, data.Docsname, data.DocsContent)
 	docs.Response.WriteJson(ok)
 }
 
 // 更新开发文档的文档树名称
 func (docs *docsOperationController) UpdateDocName(data *docsTreeHelper) {
-	tree := models.GetDocsTree()
+	tree := tools.GetDocsTree()
 	ok := tools.UpdateDocsName(tree, data.Index, data.Docsname)
 	docs.Response.WriteJson(ok)
 }
@@ -54,7 +53,7 @@ func (docs *docsOperationController) UpdateDocName(data *docsTreeHelper) {
 func (docs *docsOperationController) UpOrDownDoc(data *docsTreeHelper) {
 	var ok bool
 	if data.Index != "" {
-		tree := models.GetDocsTree()
+		tree := tools.GetDocsTree()
 		ok = tools.UpOrDownTree(tree, data.Index, data.Docsname, data.Up)
 	}
 	docs.Response.WriteJson(ok)

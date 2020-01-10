@@ -10,7 +10,12 @@ $(function(){
     });
     $("#dtldoc").click(function(){
         $.get("/docsOperation/DeleteDoc?index="+nowIndex+"&docsname="+$("#docName").text(),function(data,std){
-            location.href="/docs/"+nowIndex
+            var list=nowIndex.split("/");
+            nowIndex=""
+            for (i=0;i<list.length-1;i++){
+                nowIndex+=list[i]+"/";
+            }
+            location.href="/docs/"+nowIndex.trim("/");
             $('#myModal').modal('hide');
         });
 
