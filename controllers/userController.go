@@ -75,7 +75,3 @@ func (user *userController) GetEdit() {
 		<script src="/js/editDocs.js"></script>`))
 	}
 }
-
-func (user *userController) VueTest() {
-	user.UseTplPath()
-}

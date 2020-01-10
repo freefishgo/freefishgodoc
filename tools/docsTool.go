@@ -11,15 +11,14 @@ func EachDocsTree(tree *models.DocsTree, index string, needActive string) string
 	treeStr := ""
 	if len(tree.NextDocsTree) == 0 {
 		if index == needActive {
-			treeStr = "<li  class='treeClick treeActive' index='" + index + "' href='/docs/" + index + "?type=xhrSon' >" + tree.Name + "</li>"
+			treeStr = "<li  class='treeClick treeActive' index='" + index + "' href='/docs/" + index + "?type=xhrSon' >" + tree.Name + "</li><script>document.title ='" + tree.Name + "';</script>"
 		} else {
 			treeStr = "<li  class='treeClick' index='" + index + "' href='/docs/" + index + "?type=xhrSon' >" + tree.Name + "</li>"
 		}
 	} else {
-
 		if index == needActive {
 			treeStr = `<li><span  class='treeClick treeActive' index='` + index + `' href="/docs/` + index + `?type=xhrSon" >` + tree.Name + `<i class="fa fa-plus fa-fw"></i></span>
-			<ul>`
+			<ul><script>document.title ='` + tree.Name + `';</script>`
 		} else {
 			treeStr = `<li><span  class='treeClick' index='` + index + `' href="/docs/` + index + `?type=xhrSon" >` + tree.Name + `<i class="fa fa-plus fa-fw"></i></span>
 			<ul>`

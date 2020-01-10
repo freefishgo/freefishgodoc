@@ -40,3 +40,18 @@
 .headActive{
     color: red;
 }
+#footerSon{
+    margin: 0px auto;
+    width: 300px;
+}
+#footer{
+    position: fixed;
+    width: 100%;
+    /*left: 0px;*/
+    bottom:0px;
+    z-index: 9999;
+    padding: 0px 0px 0px 0px;
+    border:lightgray 1px solid;
+    height: 27px;
+    background-color: #f0f0f0;
+}

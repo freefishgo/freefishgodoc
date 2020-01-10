@@ -2,6 +2,8 @@ package controllers
 
 import (
 	"freefishgodoc/models"
+	"html/template"
+	"io/ioutil"
 
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
 )
@@ -10,7 +12,15 @@ type communityController struct {
 	mvc.Controller
 }
 
+var communityContent = ""
+
+const (
+	communityIndexPath = "confStaic/community/index.fish"
+)
+
 func init() {
+	b, _ := ioutil.ReadFile(communityIndexPath)
+	communityContent = string(b)
 	community := &communityController{}
 	community.ActionRouterList = []*mvc.ActionRouter{
 		{RouterPattern: "{Controller}/",
@@ -21,6 +31,7 @@ func init() {
 
 func (community *communityController) Index() {
 	tp := community.Query["type"]
+	community.Data["content"] = template.HTML(communityContent)
 	if tp == "xhr" {
 		community.UseTplPath()
 		return
@@ -28,4 +39,18 @@ func (community *communityController) Index() {
 	community.LayoutPath = "layout/homeLayout.fish"
 	community.Data["homeHeadLi"] = models.GetHomeHeadList("开发者社区")
 	community.UseTplPath()
+}
+func (community *communityController) GetEditContent() {
+	community.Response.Write([]byte(videoContent))
+}
+
+func (community *communityController) SavePost() {
+	if v, ok := community.Query["content"]; ok {
+		v := v.(string)
+		communityContent = v
+		ioutil.WriteFile(communityIndexPath, []byte(communityContent), 0644)
+		community.Response.WriteJson(true)
+		return
+	}
+	community.Response.WriteJson(false)
 }

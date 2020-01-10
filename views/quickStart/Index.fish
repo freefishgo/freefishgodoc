@@ -1,10 +1,12 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <title>FreeFishGo</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head>
-<body>
-	<h1>欢迎使用 fishFreeGoMvc</h1>
-</body>
+    <head>
+    </head>
+    <body>
+        <div id="content" class="row">
+            {{{.content}}}
+        </div>
+        <div id="editDocs" class="row"></div>
+        <input id="bianj" style="display: none;" type="button" value="编辑" class="btn">
+        <input id="saveContent" style="display: none;" type="button" value="编辑" class="btn">
+    </body>
 </html>

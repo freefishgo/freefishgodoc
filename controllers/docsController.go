@@ -32,7 +32,7 @@ func (docs *docsController) Index() {
 	var cocsTrees = models.GetDocsTree()
 	b, ok := tools.GetArticle(cocsTrees, path.(string))
 	if ok {
-		docs.Data["centent"] = template.HTML(b)
+		docs.Data["content"] = template.HTML(b)
 	} else {
 		docs.Response.WriteHeader(404)
 	}
@@ -41,7 +41,7 @@ func (docs *docsController) Index() {
 		docs.UseTplPath()
 		return
 	} else if tp == "xhrSon" {
-		docs.Response.WriteJson(docs.Data["centent"])
+		docs.Response.WriteJson(docs.Data["content"])
 		return
 	}
 	docs.Data["docsTree"] = template.HTML(tools.EachDocsTree(cocsTrees, "0", path.(string)))

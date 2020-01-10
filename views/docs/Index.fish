@@ -8,7 +8,7 @@
         </div>
     </div>
     <div  id="ArticleCentent" class="col-md-9" style="border: lightgray 1px solid;background-color: #f5f5f5;border-radius: 10px;">
-        {{{.centent}}}
+        {{{.content}}}
     </div>
 </div>
 <script src="/tree/index.js"></script>

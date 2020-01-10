@@ -1,5 +1,8 @@
 
-		html, body {margin: 0; padding: 0; height: 100%; width: 100%; background-color: #f0f0f0; }
+		html, body {margin: 0; padding: 0;
+			 /* height: 100%; 
+			 width: 100%;  */
+			 background-color: #f0f0f0; }
 		.wrapper {font-family: "Microsoft YaHei",monospace,sans-serif; width: 90%; margin: auto; }
 		.tree > ul > li:before,
 		.tree > ul > li:after{display: none; }

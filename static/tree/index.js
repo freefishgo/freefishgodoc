@@ -24,16 +24,16 @@ $(function () {
         $.get(href,function(data,std){
             $("#ArticleCentent").html(data)
         });
-        updateUrl("wenh",href.split("?")[0])
+        var title=$(this).text();
+        // if (title=="FreeFishGo"){
+        //     title="开发文档";
+        // }
+        updateUrl(title,href.split("?")[0])
+        document.title=title;
         var h=$(".treeClick")
         h.each(function () {
             $(this).removeClass("treeActive")
         })
         $(this).addClass("treeActive")
-    })
-    $("#logoStyle").dblclick(function(){
-        $.get("/user/getedit",function(data,std){
-            $("#editDocs").html(data);
-        })
     })
 })

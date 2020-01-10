@@ -12,3 +12,6 @@ function updateUrl(title,newUrl) {
     var stateObject = {};
     history.pushState(stateObject,title,newUrl);
 }
+window.onpopstate = function (event) {
+    location.href= this.document.location;
+};

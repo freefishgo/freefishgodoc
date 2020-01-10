@@ -56,11 +56,9 @@ $(function(){
         editor=new FroalaEditor('#ArticleCententArea');
         $.get("/docs/"+nowIndex+"?type=xhrSon",function(data,std){
             editor.html.set(data)
-            //$("#ArticleCentent").html(data)
         });
         $('#myModal').modal('hide');
         $("#save").click(function(){
-            $("#edit1").html(editor.html.get());
             var obj={};
             obj.index=nowIndex;
             obj.docsname=$("#docName").text();
@@ -69,12 +67,30 @@ $(function(){
                 location.href="/docs/"+nowIndex
                 $('#myModal').modal('hide');
             });
-        })    
+        });    
     });
     $('#myModal').on('show.bs.modal', function(){
         var $this = $(this);
         var $modal_dialog = $this.find('.modal-dialog');
         $this.css('display', 'block');
         $modal_dialog.css({'margin-top': Math.max(0, ($(window).height() - $modal_dialog.height()) / 2) });       
+    });
+
+    $("#bianj").click(function(){
+        $("#bianj").hide();
+        var html='<textarea id="contentArticle"></textarea><button id="saveContent" class="btn btn-default">保存</button>';
+        $("#content").html(html);
+        editor=new FroalaEditor('#contentArticle');
+        var href =(document.location+"").split('?')[0];
+        $.get(href+"/GetEditContent",function(data,std){
+            editor.html.set(data)
+        });
+        $("#saveContent").click(function(){
+            var obj={};
+            obj.content=editor.html.get();
+            $.post(href+"/save",obj,function(data,std){
+                location.href=href;
+            });
+        }); 
     });
 });
