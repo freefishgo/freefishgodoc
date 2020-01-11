@@ -36,7 +36,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a  id="logoStyle" style="padding-top: 0px;" class="navbar-brand" href="/">freeFishGo</a>
+                    <a  id="logoStyle" style="padding-top: 0px;" class="navbar-brand" href="/" onclick="return false" >freeFishGo</a>
                 </div>
                 <div class="collapse navbar-collapse" id="example-navbar-collapse">
                     <ul  id="head"  class="nav navbar-nav">
