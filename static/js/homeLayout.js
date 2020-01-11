@@ -21,7 +21,7 @@ $(function () {
         document.title=$(this).text();
     });
     function changeHev(){
-        $("#headHiv").css("margin-top",$("#headDivHei").outerHeight()+28+"px");
+        $("#headHiv").css("margin-top",$("#headDivHei").outerHeight()+5+"px");
     }
     $("#headDivHei").click(function(){
         setTimeout(changeHev,370)
