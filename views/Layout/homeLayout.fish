@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/tree/style.css" />
     <link rel="stylesheet" href="/css/homeLayout.css"/>
     <link href="/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+
 </head>
 <script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/js/share.js"></script>

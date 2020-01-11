@@ -2,7 +2,7 @@
     <head>
     </head>
     <body>
-        <div id="content" class="row">
+        <div  class="fr-element fr-view" id="content" class="row">
             {{{.content}}}
         </div>
         <div id="editDocs" class="row"></div>
