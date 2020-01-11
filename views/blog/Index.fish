@@ -2,7 +2,7 @@
     <head>
     </head>
     <body>
-        <div style="background-color: #FFF;border-radius: 10px;">
+        <div style="background-color: #FFF;border-radius: 10px;padding-top: 10px;padding-bottom: 10px;">
             <div class="fr-element fr-view contentMargin" id="content" class="row" >
                 {{{.content}}}
             </div>

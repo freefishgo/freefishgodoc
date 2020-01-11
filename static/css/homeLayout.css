@@ -65,3 +65,9 @@ a:link{
     margin-right: 20px;
     margin-left: 20px;
 }
+p[data-f-id="pbf"]>a[title="Froala Editor"]{
+    opacity: 0;
+}
+p[data-f-id="pbf"]{
+    display: none;
+}
