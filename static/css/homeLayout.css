@@ -12,33 +12,27 @@
 }
 #logoStyle{
     display: inline;
-    padding: 0px 10px 0px 15px;
-    line-height: 50px;
+    padding: 0px 5px 0px 10px;
+    line-height: 40px;
+    font-size: 35px;
 }
 .row{
     margin-left: 0px;
     margin-right: 0px;
 }
 #head li {
-    display:inline;
+    margin-left:25px ;
+    /* display:inline;
     margin: 0;
     padding: 0;
-    color: #428bca;
+    color: #428bca; */
 }
 a:link{
     text-decoration:none;
 }
-#head li  a{
-    display:inline;
-    margin-left: 2.5%;
-    cursor:pointer ;
-    padding: 13px 10px 5px 10px;    
-}
-/*#head li h4 a{*/
-/*    text-decoration:none;*/
-/*}*/
-#head li h4 a:hover{
-    background-color: gray;
+#headDivHei{
+    z-index: 999;
+    background-color: #f0f0f0;
 }
 #head .headActive{
     color: red;
@@ -58,7 +52,9 @@ a:link{
     height: 27px;
     background-color: #f0f0f0;
 }
-
+#footerTop{
+    height: 40px;
+}
 .fr-wrapper > div[style*='z-index: 9999'] {
     /*position: absolute;
     top: -10000px;

@@ -19,5 +19,12 @@ $(function () {
         })
         updateUrl($(this).text(),url.split("?")[0])
         document.title=$(this).text();
-    })
+    });
+    function changeHev(){
+        $("#headHiv").css("margin-top",$("#headDivHei").outerHeight()+28+"px");
+    }
+    $("#headDivHei").click(function(){
+        setTimeout(changeHev,370)
+    });
+    changeHev();
 })
