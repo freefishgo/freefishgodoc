@@ -71,3 +71,7 @@ p[data-f-id="pbf"]>a[title="Froala Editor"]{
 p[data-f-id="pbf"]{
     display: none;
 }
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+}

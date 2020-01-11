@@ -7,7 +7,7 @@
             </ul>
         </div>
     </div>
-    <div  class="fr-element fr-view col-md-9"  id="ArticleCentent" style="background-color: #FFF;border-radius: 10px;;padding-top: 10px;padding-bottom: 10px;">
+    <div  class="fr-element fr-view col-md-9"  id="ArticleCentent" style="background-color: #FFF;border-radius: 2px;;padding-top: 10px;padding-bottom: 10px;">
         {{{.content}}}
     </div>
 </div>
