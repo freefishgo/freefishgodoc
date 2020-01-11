@@ -18,14 +18,6 @@
 <body>
     <div class="row  navbar-default" id="headDiv">
         <div id="headDivHei" class="container  main-container">
-            <!-- <nav>
-                <div>
-                    <h1 id="logoStyle" style="padding-left: 0px;">freeFishGo</h1>
-                    <ul id="head" style="display: inline">
-                        {{{range $k, $v := .homeHeadLi}}}  {{{if $v.Active}}} <li><a class="headActive heada"  href="{{{$v.Path}}}"  onclick="return false">{{{$v.Name}}}</a> </li> <script>document.title ='{{{$v.Name}}}';</script>  {{{else}}} <li>  <a href="{{{$v.Path}}}" class="heada" onclick="return false">{{{$v.Name}}}</a> {{{end}}}</li> {{{end}}}
-                    </ul>
-                </div>
-            </nav> -->
             <nav class="navbar" style="margin-bottom: 0px;" role="navigation">
                 <div class="container-fluid"> 
                 <div class="navbar-header">
@@ -60,7 +52,6 @@
                 <span>渝ICP备17012865号</span>
             </a>
         </div>
-            <!-- <span class="lh">渝ICP备17012865号</span></div> -->
     </footer>
 </body>
 </html>
