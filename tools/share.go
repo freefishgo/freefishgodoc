@@ -7,6 +7,8 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"io"
+	"os"
+	"path/filepath"
 )
 
 func FormaterWrite(w io.Writer, s interface{}) error {
@@ -31,4 +33,34 @@ func GetMd5String(s string) string {
 	h := md5.New()
 	h.Write([]byte(s)) //使用zhifeiya名字做散列值，设定后不要变
 	return hex.EncodeToString(h.Sum(nil))
+}
+
+// 写文件
+func WriteFile(path string, b []byte) error {
+	err := os.MkdirAll(filepath.Dir(path), 0644)
+	if err != nil {
+		return err
+	}
+	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	_, err = f.Write(b)
+	defer f.Close()
+	return err
+}
+
+// 写文件
+func WriteFileFromReader(path string, r io.Reader) error {
+	err := os.MkdirAll(filepath.Dir(path), 0644)
+	if err != nil {
+		return err
+	}
+	f, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	io.Copy(f, r)
+	defer f.Close()
+	return err
 }

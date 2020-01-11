@@ -52,6 +52,7 @@ func updateDocs(docs *models.DocsTree) {
 		f, _ = os.Create(docs.Path)
 	}
 	f.WriteString(docs.Content)
+	defer f.Close()
 	updateDocsTree()
 }
 

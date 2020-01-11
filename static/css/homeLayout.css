@@ -61,3 +61,7 @@ a:link{
     opacity: 0;*/
     display: none;
     }
+.contentMargin{
+    margin-right: 20px;
+    margin-left: 20px;
+}
