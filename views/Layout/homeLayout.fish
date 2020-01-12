@@ -41,7 +41,7 @@
         </div>
 
     </div>
-    <div class="row" id="headHiv" style="margin-top: 80px"></div>
+    <div class="row" id="headHiv" style="margin-top: 57px"></div>
     <div id="homeContent" class="container main-container">
         ((.LayoutContent))
     </div>
