@@ -16,7 +16,11 @@ $(function () {
         url=$(this).attr("href")
         $.get(url+"?type=xhr",function (result,std) {
             $("#homeContent").html(result)
-        })
+        });
+        if ($("#changeheadDivHei").attr("aria-expanded")=="true"){
+            debugger;
+            $("#changeheadDivHei").trigger("click");
+        }
         updateUrl($(this).text(),url.split("?")[0])
         document.title=$(this).text();
     });
@@ -26,7 +30,7 @@ $(function () {
     $("#changeheadDivHei").click(function(){
         setTimeout(changeHev,370)
     });
-    //changeHev();
+    changeHev();
     $('p[data-f-id="pbf"] >a[title="Froala Editor"]').attr("href","/");
     $('p[data-f-id="pbf"] >a[title="Froala Editor"]').text("freeFishGo");
 })
