@@ -31,13 +31,10 @@ func (media *mediaController) UploadFilePost() {
 		return
 	}
 	ty := filepath.Ext(fh.Filename)
-	path := filepath.Join("/uploadfile", strings.ToLower(strings.Trim(ty, ".")), tools.GetGuid()+ty)
+	path := "/uploadfile/" + strings.ToLower(strings.Trim(ty, ".")) + "/" + tools.GetGuid() + ty
 	resp.Link = path
 	media.Response.WriteJson(resp)
 	path = filepath.Join("static", path)
-	if err != nil {
-		log.Fatal(err)
-	}
 	if media.Query["type"] == "img" {
 		// decode jpeg into image.Image
 		img, err := jpeg.Decode(f)
@@ -47,10 +44,10 @@ func (media *mediaController) UploadFilePost() {
 		// resize to width 1000 using Lanczos resampling
 		// and preserve aspect ratio
 		m := resize.Resize(1000, 0, img, resize.Lanczos3)
-
+		os.MkdirAll(filepath.Dir(path), 0644)
 		out, err := os.Create(path)
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
 		}
 		defer out.Close()
 
