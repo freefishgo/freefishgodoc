@@ -23,7 +23,7 @@ $(function () {
     function changeHev(){
         $("#headHiv").css("margin-top",$("#headDivHei").outerHeight()+5+"px");
     }
-    $("#headDivHei").click(function(){
+    $("#changeheadDivHei").click(function(){
         setTimeout(changeHev,370)
     });
     //changeHev();
