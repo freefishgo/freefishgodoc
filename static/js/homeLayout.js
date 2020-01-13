@@ -26,7 +26,7 @@ $(function () {
     $("#headDivHei").click(function(){
         setTimeout(changeHev,370)
     });
-    changeHev();
+    //changeHev();
     $('p[data-f-id="pbf"] >a[title="Froala Editor"]').attr("href","/");
     $('p[data-f-id="pbf"] >a[title="Froala Editor"]').text("freeFishGo");
 })
