@@ -40,7 +40,7 @@ func (home *HomeController) Index() {
 		return
 	}
 	home.Data["homeHeadLi"] = models.GetHomeHeadList("首页")
-	home.LayoutPath = "layout/homeLayout.fish"
+	home.LayoutPath = "Layout/homeLayout.fish"
 	home.UseTplPath()
 }
 

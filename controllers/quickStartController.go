@@ -37,7 +37,7 @@ func (quickStart *quickStartController) Index() {
 		quickStart.UseTplPath()
 		return
 	}
-	quickStart.LayoutPath = "layout/homeLayout.fish"
+	quickStart.LayoutPath = "Layout/homeLayout.fish"
 	quickStart.Data["homeHeadLi"] = models.GetHomeHeadList("快速入门")
 	quickStart.UseTplPath()
 }

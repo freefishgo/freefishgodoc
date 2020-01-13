@@ -1,1 +1,1 @@
-<p><strong>快速入门</strong></p>
+<p><em>快速入门</em></p>

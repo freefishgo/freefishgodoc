@@ -45,7 +45,7 @@ func (docs *docsController) Index() {
 		return
 	}
 	docs.Data["docsTree"] = template.HTML(tools.EachDocsTree(cocsTrees, "0", path.(string)))
-	docs.LayoutPath = "layout/homeLayout.fish"
+	docs.LayoutPath = "Layout/homeLayout.fish"
 	docs.Data["homeHeadLi"] = models.GetHomeHeadList("开发文档")
 	docs.UseTplPath()
 }

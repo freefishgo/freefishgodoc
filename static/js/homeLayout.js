@@ -9,17 +9,24 @@ $(function () {
             }
         })
     });
-    $("#head li h4").click(function () {
-        var h=$("#head li h4")
-        h.each(function () {
-            $(this).removeClass("headActive")
-        })
+    $("#head .heada").click(function () {
+        var h=$("#head .heada")
+        h.removeClass("headActive")
         $(this).addClass("headActive")
         url=$(this).attr("href")
-        $.get(url,function (result,std) {
+        $.get(url+"?type=xhr",function (result,std) {
             $("#homeContent").html(result)
         })
         updateUrl($(this).text(),url.split("?")[0])
         document.title=$(this).text();
-    })
+    });
+    function changeHev(){
+        $("#headHiv").css("margin-top",$("#headDivHei").outerHeight()+5+"px");
+    }
+    $("#headDivHei").click(function(){
+        setTimeout(changeHev,370)
+    });
+    changeHev();
+    $('p[data-f-id="pbf"] >a[title="Froala Editor"]').attr("href","/");
+    $('p[data-f-id="pbf"] >a[title="Froala Editor"]').text("freeFishGo");
 })

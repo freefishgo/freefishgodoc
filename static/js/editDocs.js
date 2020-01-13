@@ -1,6 +1,38 @@
 /// <reference path="../js/jquery-3.3.1.min.js" />
 /// <reference path="../js/share.js" />
 /// <reference path="../js/froala_editor.pkgd.min.js"/>
+var froalaOption ={
+    language: 'zh_cn',
+    // height: 500,
+
+    // disable quick insert
+    quickInsertTags: [],
+
+    // toolbar buttons
+    toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', '|', 'paragraphFormat', 'fontSize', 'color', '|', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertFile', 'insertImage', 'insertVideo', 'embedly', 'insertTable', '|', 'insertHR', 'selectAll', 'clearFormatting', '|', 'spellChecker', 'help', 'html', '|', 'undo', 'redo'],
+
+    // upload file
+    fileUploadParam: 'file',
+    fileUploadURL: '/media/UploadFile',
+    fileUploadMethod: 'POST',
+    fileMaxSize: 20 * 1024 * 1024,
+    fileAllowedTypes: ['*'],
+
+    // upload image
+    // imageUploadParams:{type1:"img"},
+    imageUploadParam: 'file',
+    imageUploadURL: '/media/UploadFile?type=img',
+    imageUploadMethod: 'POST',
+    imageMaxSize: 20 * 1024 * 1024,
+    imageAllowedTypes: ['jpeg', 'jpg', 'png', 'gif', 'bmp', 'svg+xml'],
+
+    // upload video
+    videoUploadParam: 'file',
+    videoUploadURL: '/media/UploadFile',
+    videoUploadMethod: 'POST',
+    videoMaxSize: 50 * 1024 * 1024,
+    videoAllowedTypes: ['avi', 'mov', 'mp4', 'm4v', 'mpeg', 'mpg', 'wmv', 'ogv'],
+}
 $(function(){
     var nowIndex=""
     $(".treeClick").dblclick(function () {
@@ -58,17 +90,18 @@ $(function(){
     $("#editAtc").click(function(){
         var html='<textarea id="ArticleCententArea"></textarea><button id="save" class="btn btn-default">保存</button>';
         $("#ArticleCentent").html(html);
-        editor=new FroalaEditor('#ArticleCententArea');
+        editor=new FroalaEditor('#ArticleCententArea',froalaOption);
+        $('#myModal').modal('hide');
         $.get("/docs/"+nowIndex+"?type=xhrSon",function(data,std){
             editor.html.set(data)
         });
-        $('#myModal').modal('hide');
         $("#save").click(function(){
             var obj={};
             obj.index=nowIndex;
             obj.docsname=$("#docName").text();
             obj.content=editor.html.get();
             $.post("/docsOperation/UpdateDocContent",obj,function(data,std){
+                editor.destroy();
                 location.href="/docs/"+nowIndex
                 $('#myModal').modal('hide');
             });
@@ -80,12 +113,12 @@ $(function(){
         $this.css('display', 'block');
         $modal_dialog.css({'margin-top': Math.max(0, ($(window).height() - $modal_dialog.height()) / 2) });       
     });
-
     $("#bianj").click(function(){
         $("#bianj").hide();
+        $(".contentMargin").removeClass("contentMargin");
         var html='<textarea id="contentArticle"></textarea><button id="saveContent" class="btn btn-default">保存</button>';
         $("#content").html(html);
-        editor=new FroalaEditor('#contentArticle');
+        editor=new FroalaEditor('#contentArticle',froalaOption);
         var href =(document.location+"").split('?')[0];
         $.get(href+"/GetEditContent",function(data,std){
             editor.html.set(data)
@@ -94,6 +127,7 @@ $(function(){
             var obj={};
             obj.content=editor.html.get();
             $.post(href+"/save",obj,function(data,std){
+                editor.destroy()
                 location.href=href;
             });
         }); 

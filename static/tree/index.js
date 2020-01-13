@@ -21,7 +21,7 @@
 $(function () {
     $(".treeClick").click(function () {
         var href= $(this).attr("href")
-        $.get(href,function(data,std){
+        $.get(href+"?type=xhrSon",function(data,std){
             $("#ArticleCentent").html(data)
         });
         var title=$(this).text();

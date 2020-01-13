@@ -33,7 +33,6 @@
     /**
      * Simplified Chinese spoken in China.
      */
-
     $.FE.LANGUAGE['zh_cn'] = {
         translation: {
             // Place holder

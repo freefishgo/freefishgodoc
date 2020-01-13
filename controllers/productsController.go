@@ -36,7 +36,7 @@ func (products *productsController) Index() {
 		products.UseTplPath()
 		return
 	}
-	products.LayoutPath = "layout/homeLayout.fish"
+	products.LayoutPath = "Layout/homeLayout.fish"
 	products.Data["homeHeadLi"] = models.GetHomeHeadList("产品案例")
 	products.UseTplPath()
 }

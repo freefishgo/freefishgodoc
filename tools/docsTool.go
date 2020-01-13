@@ -52,6 +52,8 @@ func updateDocs(docs *models.DocsTree) {
 		f, _ = os.Create(docs.Path)
 	}
 	f.WriteString(docs.Content)
+	defer f.Close()
+	updateDocsTree()
 }
 
 // 删除文档树上的文章
@@ -69,16 +71,16 @@ func EachDocsTree(tree *models.DocsTree, index string, needActive string) string
 	treeStr := ""
 	if len(tree.NextDocsTree) == 0 {
 		if index == needActive {
-			treeStr = "<li  class='treeClick treeActive' index='" + index + "' href='/docs/" + index + "?type=xhrSon' >" + tree.Name + "</li><script>document.title ='" + tree.Name + "';</script>"
+			treeStr = "<li ><a  class='treeClick treeActive' index='" + index + "' href='/docs/" + index + "' onclick='return false'  >" + tree.Name + "</a></li><script>document.title ='" + tree.Name + "';</script>"
 		} else {
-			treeStr = "<li  class='treeClick' index='" + index + "' href='/docs/" + index + "?type=xhrSon' >" + tree.Name + "</li>"
+			treeStr = "<li  ><a  class='treeClick' index='" + index + "' href='/docs/" + index + "' onclick='return false' >" + tree.Name + "</a></li>"
 		}
 	} else {
 		if index == needActive {
-			treeStr = `<li><span  class='treeClick treeActive' index='` + index + `' href="/docs/` + index + `?type=xhrSon" >` + tree.Name + `<i class="fa fa-plus fa-fw"></i></span>
+			treeStr = `<li><span  ><a class='treeClick treeActive' index='` + index + `' href="/docs/` + index + `" onclick="return false" >` + tree.Name + `</a><i class="fa fa-plus fa-fw"></i></span>
 			<ul><script>document.title ='` + tree.Name + `';</script>`
 		} else {
-			treeStr = `<li><span  class='treeClick' index='` + index + `' href="/docs/` + index + `?type=xhrSon" >` + tree.Name + `<i class="fa fa-plus fa-fw"></i></span>
+			treeStr = `<li><span ><a  class='treeClick' index='` + index + `' href="/docs/` + index + `" onclick="return false" >` + tree.Name + `</a><i class="fa fa-plus fa-fw"></i></span>
 			<ul>`
 		}
 		for k, v := range tree.NextDocsTree {
