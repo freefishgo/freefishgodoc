@@ -18,7 +18,6 @@ $(function () {
             $("#homeContent").html(result)
         });
         if ($("#changeheadDivHei").attr("aria-expanded")=="true"){
-            debugger;
             $("#changeheadDivHei").trigger("click");
         }
         updateUrl($(this).text(),url.split("?")[0])
