@@ -18,6 +18,7 @@ $(function () {
             $("#homeContent").html(result)
         })
         updateUrl($(this).text(),url.split("?")[0])
+        $("#changeheadDivHei").trigger("click");
         document.title=$(this).text();
     });
     function changeHev(){
