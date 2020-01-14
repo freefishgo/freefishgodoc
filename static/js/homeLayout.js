@@ -16,7 +16,10 @@ $(function () {
         url=$(this).attr("href")
         $.get(url+"?type=xhr",function (result,std) {
             $("#homeContent").html(result)
-        })
+        });
+        if ($("#changeheadDivHei").attr("aria-expanded")=="true"){
+            $("#changeheadDivHei").trigger("click");
+        }
         updateUrl($(this).text(),url.split("?")[0])
         $("#changeheadDivHei").trigger("click");
         document.title=$(this).text();
@@ -24,10 +27,10 @@ $(function () {
     function changeHev(){
         $("#headHiv").css("margin-top",$("#headDivHei").outerHeight()+5+"px");
     }
-    $("#headDivHei").click(function(){
+    $("#changeheadDivHei").click(function(){
         setTimeout(changeHev,370)
     });
-    //changeHev();
+    changeHev();
     $('p[data-f-id="pbf"] >a[title="Froala Editor"]').attr("href","/");
     $('p[data-f-id="pbf"] >a[title="Froala Editor"]').text("freeFishGo");
 })
