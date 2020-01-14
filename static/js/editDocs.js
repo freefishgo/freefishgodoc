@@ -116,13 +116,13 @@ $(function(){
     $("#bianj").click(function(){
         $("#bianj").hide();
         $(".contentMargin").removeClass("contentMargin");
-        // var html='<textarea id="contentArticle"></textarea><button id="saveContent" class="btn btn-default">保存</button>';
-        // $("#content").html(html);
-        editor=new FroalaEditor('#content',froalaOption);
+        var html='<textarea id="contentArticle"></textarea><button id="saveContent" class="btn btn-default">保存</button>';
+        $("#content").html(html);
+        editor=new FroalaEditor('#contentArticle',froalaOption);
         var href =(document.location+"").split('?')[0];
-        // $.get(href+"/GetEditContent",function(data,std){
-        //     editor.html.set(data)
-        // });
+        $.get(href+"/GetEditContent",function(data,std){
+            editor.html.set(data)
+        });
         $("#saveContent").click(function(){
             var obj={};
             obj.content=editor.html.get();
