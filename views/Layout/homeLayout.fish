@@ -8,14 +8,19 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/tree/style.css" />
     <link rel="stylesheet" href="/css/homeLayout.css"/>
-    <link href="/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../froala_editor_3.1.0/css/froala_editor.pkgd.css"/>
 
 </head>
+<script type="text/javascript" src="../froala_editor_3.1.0/js/froala_editor.pkgd.min.js"></script>
+<script type="text/javascript" src="../froala_editor_3.1.0/js/plugins.pkgd.min.js"></script>
+<script type="text/javascript" src="../froala_editor_3.1.0/js/languages/zh_cn.js"></script>
+
 <script src="/js/jquery-3.3.1.min.js"></script>
 <script src="/js/share.js"></script>
 <script src="/js/homeLayout.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/froala_editor.pkgd.min.js"></script>
+
+<!-- <script type="text/javascript" src="/js/froala_editor.pkgd.min.js"></script> -->
 <body>
     <div class="row  navbar-default" id="headDiv">
         <div id="headDivHei" class="container  main-container">

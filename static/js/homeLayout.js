@@ -21,7 +21,6 @@ $(function () {
             $("#changeheadDivHei").trigger("click");
         }
         updateUrl($(this).text(),url.split("?")[0])
-        $("#changeheadDivHei").trigger("click");
         document.title=$(this).text();
     });
     function changeHev(){

@@ -1,1 +1,1 @@
-<p><strong><em>首页<img src="\uploadfile\jpg\9a1e9210a9c30b387c83c4af10f4867e.JPG" style="width: 300px;" class="fr-fic fr-dib"></em></strong></p>
+<p><strong><em>首页</em></strong></p>

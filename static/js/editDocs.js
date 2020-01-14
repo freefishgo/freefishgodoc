@@ -1,6 +1,6 @@
 /// <reference path="../js/jquery-3.3.1.min.js" />
 /// <reference path="../js/share.js" />
-/// <reference path="../js/froala_editor.pkgd.min.js"/>
+/// <reference path="../froala_editor_3.1.0/js/froala_editor.pkgd.min.js"/>
 var froalaOption ={
     language: 'zh_cn',
     // height: 500,
@@ -9,7 +9,7 @@ var froalaOption ={
     quickInsertTags: [],
 
     // toolbar buttons
-    toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', '|', 'paragraphFormat', 'fontSize', 'color', '|', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertFile', 'insertImage', 'insertVideo', 'embedly', 'insertTable', '|', 'insertHR', 'selectAll', 'clearFormatting', '|', 'spellChecker', 'help', 'html', '|', 'undo', 'redo'],
+    // toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', '|', 'paragraphFormat', 'fontSize', 'color', '|', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertFile', 'insertImage', 'insertVideo', 'embedly', 'insertTable', '|', 'insertHR', 'selectAll', 'clearFormatting', '|', 'spellChecker', 'help', 'html', '|', 'undo', 'redo'],
 
     // upload file
     fileUploadParam: 'file',
@@ -116,13 +116,13 @@ $(function(){
     $("#bianj").click(function(){
         $("#bianj").hide();
         $(".contentMargin").removeClass("contentMargin");
-        var html='<textarea id="contentArticle"></textarea><button id="saveContent" class="btn btn-default">保存</button>';
-        $("#content").html(html);
-        editor=new FroalaEditor('#contentArticle',froalaOption);
+        // var html='<textarea id="contentArticle"></textarea><button id="saveContent" class="btn btn-default">保存</button>';
+        // $("#content").html(html);
+        editor=new FroalaEditor('#content',froalaOption);
         var href =(document.location+"").split('?')[0];
-        $.get(href+"/GetEditContent",function(data,std){
-            editor.html.set(data)
-        });
+        // $.get(href+"/GetEditContent",function(data,std){
+        //     editor.html.set(data)
+        // });
         $("#saveContent").click(function(){
             var obj={};
             obj.content=editor.html.get();
