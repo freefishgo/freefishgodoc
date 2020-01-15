@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"freefishgodoc/models"
+	"freefishgodoc/tools"
 	"html/template"
 	"io/ioutil"
 
@@ -46,12 +47,16 @@ func (quickStart *quickStartController) GetEditContent() {
 }
 
 func (quickStart *quickStartController) SavePost() {
-	if v, ok := quickStart.Query["content"]; ok {
-		v := v.(string)
-		quickStartContent = v
-		ioutil.WriteFile(quickStartIndexPath, []byte(quickStartContent), 0644)
-		quickStart.Response.WriteJson(true)
-		return
+	if tools.IsLogin(quickStart.Response, quickStart.Request) {
+		if v, ok := quickStart.Query["content"]; ok {
+			v := v.(string)
+			quickStartContent = v
+			ioutil.WriteFile(quickStartIndexPath, []byte(quickStartContent), 0644)
+			quickStart.Response.WriteJson(true)
+			return
+		}
+		quickStart.Response.WriteJson(false)
+	} else {
+		quickStart.Response.Write([]byte("登录过期"))
 	}
-	quickStart.Response.WriteJson(false)
 }

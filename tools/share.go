@@ -9,6 +9,8 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+
+	"github.com/freefishgo/freefishgo"
 )
 
 func FormaterWrite(w io.Writer, s interface{}) error {
@@ -63,4 +65,18 @@ func WriteFileFromReader(path string, r io.Reader) error {
 	io.Copy(f, r)
 	defer f.Close()
 	return err
+}
+
+// 判断用户是否登录
+func IsLogin(ir freefishgo.IResponse, r *freefishgo.Request) bool {
+	userinfo, _ := ir.GetSession("userinfo")
+	userip, _ := ir.GetSession("userip")
+	if userinfo != nil && userip != nil {
+		if userip != r.Request.Host {
+			return false
+		}
+		return true
+	} else {
+		return false
+	}
 }

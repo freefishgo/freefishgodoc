@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"freefishgodoc/models"
+	"freefishgodoc/tools"
 	"html/template"
 	"io/ioutil"
 
@@ -45,12 +46,16 @@ func (blog *blogController) GetEditContent() {
 }
 
 func (blog *blogController) SavePost() {
-	if v, ok := blog.Query["content"]; ok {
-		v := v.(string)
-		blogContent = v
-		ioutil.WriteFile(blogIndexPath, []byte(blogContent), 0644)
-		blog.Response.WriteJson(true)
-		return
+	if tools.IsLogin(blog.Response, blog.Request) {
+		if v, ok := blog.Query["content"]; ok {
+			v := v.(string)
+			blogContent = v
+			ioutil.WriteFile(blogIndexPath, []byte(blogContent), 0644)
+			blog.Response.WriteJson(true)
+			return
+		}
+		blog.Response.WriteJson(false)
+	} else {
+		blog.Response.Write([]byte("登录过期"))
 	}
-	blog.Response.WriteJson(false)
 }

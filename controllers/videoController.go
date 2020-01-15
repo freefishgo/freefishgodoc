@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"freefishgodoc/models"
+	"freefishgodoc/tools"
 	"html/template"
 	"io/ioutil"
 
@@ -45,12 +46,16 @@ func (video *videoController) GetEditContent() {
 }
 
 func (video *videoController) SavePost() {
-	if v, ok := video.Query["content"]; ok {
-		v := v.(string)
-		videoContent = v
-		ioutil.WriteFile(videoIndexPath, []byte(videoContent), 0644)
-		video.Response.WriteJson(true)
-		return
+	if tools.IsLogin(video.Response, video.Request) {
+		if v, ok := video.Query["content"]; ok {
+			v := v.(string)
+			videoContent = v
+			ioutil.WriteFile(videoIndexPath, []byte(videoContent), 0644)
+			video.Response.WriteJson(true)
+			return
+		}
+		video.Response.WriteJson(false)
+	} else {
+		video.Response.Write([]byte("登录过期"))
 	}
-	video.Response.WriteJson(false)
 }

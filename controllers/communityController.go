@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"freefishgodoc/models"
+	"freefishgodoc/tools"
 	"html/template"
 	"io/ioutil"
 
@@ -45,12 +46,16 @@ func (community *communityController) GetEditContent() {
 }
 
 func (community *communityController) SavePost() {
-	if v, ok := community.Query["content"]; ok {
-		v := v.(string)
-		communityContent = v
-		ioutil.WriteFile(communityIndexPath, []byte(communityContent), 0644)
-		community.Response.WriteJson(true)
-		return
+	if tools.IsLogin(community.Response, community.Request) {
+		if v, ok := community.Query["content"]; ok {
+			v := v.(string)
+			communityContent = v
+			ioutil.WriteFile(communityIndexPath, []byte(communityContent), 0644)
+			community.Response.WriteJson(true)
+			return
+		}
+		community.Response.WriteJson(false)
+	} else {
+		community.Response.Write([]byte("登录过期"))
 	}
-	community.Response.WriteJson(false)
 }

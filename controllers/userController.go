@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"freefishgodoc/tools"
+
 	"github.com/freefishgo/freefishgo/middlewares/mvc"
 )
 
@@ -28,7 +30,7 @@ func (user *userController) DoLoginPost(u *userInfo) {
 		UserName string `json:"username"`
 		IsLogin  bool   `json:"islogin"`
 	}{IsLogin: false}
-	if u.UserName == "huzhouyu" && u.Pwd == "aa123456" {
+	if u.UserName == "huzhouyu" && u.Pwd == "123456" {
 		user.Response.SetSession("userinfo", u)
 		user.Response.SetSession("userip", user.Request.Host)
 		tmp.UserName = u.UserName
@@ -38,8 +40,7 @@ func (user *userController) DoLoginPost(u *userInfo) {
 }
 
 func (user *userController) GetEdit() {
-	u, _ := user.Response.GetSession("userinfo")
-	if u != nil {
+	if tools.IsLogin(user.Response, user.Request) {
 		user.Response.Write([]byte(`
 		<!-- 模态框（Modal） -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
