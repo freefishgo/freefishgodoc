@@ -60,8 +60,8 @@ func (media *mediaController) UploadFilePost() {
 
 // 控制器执行前调用
 func (media *mediaController) Prepare() {
-	userinfo := media.Response.GetSession("userinfo")
-	userip := media.Response.GetSession("userip")
+	userinfo, _ := media.Response.GetSession("userinfo")
+	userip, _ := media.Response.GetSession("userip")
 	if userinfo != nil && userip != nil {
 		if userip != media.Request.Host {
 			media.Response.Write([]byte("违规操作"))

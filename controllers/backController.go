@@ -19,7 +19,7 @@ func (back *backController) Index() {
 
 // 控制器执行前调用
 func (back *backController) Prepare() {
-	sv := back.Response.GetSession("userinfo")
+	sv, _ := back.Response.GetSession("userinfo")
 	if sv == nil {
 		back.Response.Redirect("/user/login")
 		back.SkipController()

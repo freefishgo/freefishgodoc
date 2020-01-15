@@ -28,7 +28,7 @@ func (user *userController) DoLoginPost(u *userInfo) {
 		UserName string `json:"username"`
 		IsLogin  bool   `json:"islogin"`
 	}{IsLogin: false}
-	if u.UserName == "huzhouyu" && u.Pwd == "123456" {
+	if u.UserName == "huzhouyu" && u.Pwd == "aa123456" {
 		user.Response.SetSession("userinfo", u)
 		user.Response.SetSession("userip", user.Request.Host)
 		tmp.UserName = u.UserName
@@ -38,7 +38,7 @@ func (user *userController) DoLoginPost(u *userInfo) {
 }
 
 func (user *userController) GetEdit() {
-	u := user.Response.GetSession("userinfo")
+	u, _ := user.Response.GetSession("userinfo")
 	if u != nil {
 		user.Response.Write([]byte(`
 		<!-- 模态框（Modal） -->

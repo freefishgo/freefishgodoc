@@ -61,8 +61,8 @@ func (docs *docsOperationController) UpOrDownDoc(data *docsTreeHelper) {
 
 // 控制器执行前调用
 func (docsOperation *docsOperationController) Prepare() {
-	userinfo := docsOperation.Response.GetSession("userinfo")
-	userip := docsOperation.Response.GetSession("userip")
+	userinfo, _ := docsOperation.Response.GetSession("userinfo")
+	userip, _ := docsOperation.Response.GetSession("userip")
 	if userinfo != nil && userip != nil {
 		if userip != docsOperation.Request.Host {
 			docsOperation.Response.Write([]byte("违规操作"))
