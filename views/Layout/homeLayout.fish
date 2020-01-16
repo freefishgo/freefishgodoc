@@ -44,6 +44,8 @@
     <div id="homeContent" class="container main-container fr-element fr-view">
         ((.LayoutContent))
     </div>
+    <div id="editDocs" class="row"></div>
+    <input id="bianj" style="display: none;" type="button" value="编辑" class="btn"/>
     <div id="footerTop"></div>
     <footer id="footer" class="container main-container">
         <div id="footerSon">

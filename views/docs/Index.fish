@@ -12,4 +12,3 @@
     </div>
 </div>
 <script src="/tree/index.js"></script>
-<div id="editDocs" class="row"></div>
