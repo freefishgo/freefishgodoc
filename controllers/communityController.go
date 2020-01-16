@@ -42,7 +42,7 @@ func (community *communityController) Index() {
 	community.UseTplPath()
 }
 func (community *communityController) GetEditContent() {
-	community.Response.Write([]byte(videoContent))
+	community.Response.Write([]byte(communityContent))
 }
 
 func (community *communityController) SavePost() {
