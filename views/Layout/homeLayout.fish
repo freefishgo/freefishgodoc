@@ -41,7 +41,7 @@
 
     </div>
     <div class="row" id="headHiv" style="margin-top: 57px"></div>
-    <div id="homeContent" class="container main-container">
+    <div id="homeContent" class="container main-container fr-element fr-view">
         ((.LayoutContent))
     </div>
     <div id="footerTop"></div>
