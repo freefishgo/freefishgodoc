@@ -51,7 +51,7 @@
             <a href="http://www.beian.miit.gov.cn" target="_blank">
                 <span>渝ICP备17012865号</span>
             </a>
-            <a href="https://github.com/freefishgo/freeFishGo"  target="_blank">本网站采用freeFishGo</a>
+            <a href="https://github.com/freefishgo/freefishgodoc"  target="_blank">本网站采用freeFishGo</a>
         </div>
     </footer>
 </body>
