@@ -7,6 +7,5 @@
                 {{{.content}}}
             </div>
         </div>
-        <input id="bianj" style="display: none;" type="button" value="编辑" class="btn"/>
     </body>
 </html>
