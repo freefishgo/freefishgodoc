@@ -3,7 +3,7 @@
 /// <reference path="../froala_editor_3.1.0/js/froala_editor.pkgd.min.js"/>
 var froalaOption ={
     language: 'zh_cn',
-    // height: 500,
+    height: 500,
 
     // disable quick insert
     quickInsertTags: [],
