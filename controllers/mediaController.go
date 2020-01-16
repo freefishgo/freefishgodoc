@@ -1,8 +1,12 @@
 package controllers
 
 import (
+	"bytes"
 	"freefishgodoc/tools"
+	"image/gif"
 	"image/jpeg"
+	"image/png"
+	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -37,9 +41,19 @@ func (media *mediaController) UploadFilePost() {
 	path = filepath.Join("static", path)
 	if media.Query["type"] == "img" {
 		// decode jpeg into image.Image
-		img, err := jpeg.Decode(f)
+		b, err := ioutil.ReadAll(f)
+		buf := new(bytes.Buffer)
+		buf.Write(b)
+		img, err := jpeg.Decode(buf)
 		if err != nil {
-			return
+			buf.Reset()
+			buf.Write(b)
+			img, err = png.Decode(buf)
+			if err != nil {
+				buf.Reset()
+				buf.Write(b)
+				img, err = gif.Decode(buf)
+			}
 		}
 		// resize to width 1000 using Lanczos resampling
 		// and preserve aspect ratio

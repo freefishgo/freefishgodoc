@@ -24,7 +24,7 @@ var froalaOption ={
     imageUploadURL: '/media/UploadFile?type=img',
     imageUploadMethod: 'POST',
     imageMaxSize: 20 * 1024 * 1024,
-    imageAllowedTypes: ['jpeg', 'jpg'],
+    imageAllowedTypes: ['jpeg', 'jpg', 'png', 'gif'],
 
     // upload video
     videoUploadParam: 'file',
