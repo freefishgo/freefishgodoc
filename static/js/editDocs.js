@@ -4,7 +4,19 @@
 var froalaOption ={
     language: 'zh_cn',
     height: 500,
-
+    tableStyles: {
+        'fr-dashed-borders':'dashed-borders',
+        'fr-alternate-rows':'alternate-rows',       
+      },
+    tableCellStyles: {
+        'fr-highlighted': 'Highlighted',
+        'fr-thick': 'Thick',
+        'noTableCellBorder':'noTableCellBorder',
+        'noTableCellBorder-left':'noTableCellBorder-left',
+        'noTableCellBorder-right':'noTableCellBorder-right',
+        'noTableCellBorder-top':'noTableCellBorder-top',
+        'noTableCellBorder-bottom':'noTableCellBorder-bottom',
+    },
     // disable quick insert
     quickInsertTags: [],
 

@@ -75,3 +75,22 @@ p[data-f-id="pbf"]{
     padding-left: 0px;
     padding-right: 0px;
 }
+
+.fr-view table[class~='noTableBorder']{
+    border: 0px;
+}
+.fr-view td[class~='noTableCellBorder']{
+    border: 0px;
+}
+.fr-view td[class~='noTableCellBorder-left']{
+    border-left: 0px;
+}
+.fr-view td[class~='noTableCellBorder-right']{
+    border-right: 0px;
+}
+.fr-view td[class~='noTableCellBorder-top']{
+    border-top: 0px;
+}
+.fr-view td[class~='noTableCellBorder-bottom']{
+    border-bottom: 0px;
+}
