@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/tree/style.css" />
     <link rel="stylesheet" href="/css/homeLayout.css"/>
-    <link rel="stylesheet" href="../froala_editor_3.1.0/css/froala_editor.pkgd.css"/>
+    <link rel="stylesheet" href="/froala_editor_3.1.0/css/froala_editor.pkgd.css"/>
 
 </head>
 <script src="/js/jquery-3.3.1.min.js"></script>

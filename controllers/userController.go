@@ -73,9 +73,9 @@ func (user *userController) GetEdit() {
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal -->
 	</div>
-	<script type="text/javascript" src="../froala_editor_3.1.0/js/froala_editor.pkgd.min.js"></script>
-    <script type="text/javascript" src="../froala_editor_3.1.0/js/plugins.pkgd.min.js"></script>
-	<script type="text/javascript" src="../froala_editor_3.1.0/js/languages/zh_cn.js"></script>
+	<script type="text/javascript" src="/froala_editor_3.1.0/js/froala_editor.pkgd.min.js"></script>
+    <script type="text/javascript" src="/froala_editor_3.1.0/js/plugins.pkgd.min.js"></script>
+	<script type="text/javascript" src="/froala_editor_3.1.0/js/languages/zh_cn.js"></script>
 	<script src="/js/editDocs.js"></script>`))
 	}
 }
