@@ -24,7 +24,6 @@ var froalaOption ={
       },
       linkAttributes: {
         title: 'Title',
-        onclick:"return true",
       },
     // disable quick insert
     quickInsertTags: [],
