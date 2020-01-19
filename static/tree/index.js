@@ -18,48 +18,33 @@
 // 		}
 // 	});
 // });
-var treeClick
+var treeClick=function(){
+    $(".treeContentClick").click(function(){
+        var href= $(this).attr("href")
+        $.get(href+"?type=xhrSon",function(data,std){
+            $("#ArticleCentent").html(data);
+            treeClick();
+            var h=$(".treeClick")
+            h.each(function () {
+                if($(this).attr("href")==href){
+                    $(this).addClass("treeActive")
+                    var title=$(this).text();
+                    updateUrl(title,href.split("?")[0])
+                    document.title=title;
+                } else{
+                    $(this).removeClass("treeActive")
+                }
+            })
+            return false;
+        });
+    });
+}
 $(function () {
     $(".treeClick").click(function () {
         var href= $(this).attr("href")
         $.get(href+"?type=xhrSon",function(data,std){
             $("#ArticleCentent").html(data);
-            $(".treeContentClick").click(function(){
-                var href= $(this).attr("href")
-                $.get(href+"?type=xhrSon",function(data,std){
-                    $("#ArticleCentent").html(data);
-                    $(".treeContentClick").click(function(){
-                        var href= $(this).attr("href")
-                        $.get(href+"?type=xhrSon",function(data,std){
-                            $("#ArticleCentent").html(data);
-                        });
-                        var h=$(".treeClick")
-                        h.each(function () {
-                            if($(this).attr("href")==href){
-                                $(this).addClass("treeActive")
-                                var title=$(this).text();
-                                updateUrl(title,href.split("?")[0])
-                                document.title=title;
-                            } else{
-                                $(this).removeClass("treeActive")
-                            }
-                        })
-                        return false;
-                    });
-                });
-                var h=$(".treeClick")
-                h.each(function () {
-                    if($(this).attr("href")==href){
-                        $(this).addClass("treeActive")
-                        var title=$(this).text();
-                        updateUrl(title,href.split("?")[0])
-                        document.title=title;
-                    } else{
-                        $(this).removeClass("treeActive")
-                    }
-                })
-                return false;
-            });
+            treeClick();
         });
         var h=$(".treeClick")
         h.each(function () {
@@ -71,42 +56,8 @@ $(function () {
             } else{
                 $(this).removeClass("treeActive")
             }
-        })
-    });
-    $(".treeContentClick").click(function(){
-        var href= $(this).attr("href")
-        $.get(href+"?type=xhrSon",function(data,std){
-            $("#ArticleCentent").html(data);
-            $(".treeContentClick").click(function(){
-                var href= $(this).attr("href")
-                $.get(href+"?type=xhrSon",function(data,std){
-                    $("#ArticleCentent").html(data);
-                });
-                var h=$(".treeClick")
-                h.each(function () {
-                    if($(this).attr("href")==href){
-                        $(this).addClass("treeActive")
-                        var title=$(this).text();
-                        updateUrl(title,href.split("?")[0])
-                        document.title=title;
-                    } else{
-                        $(this).removeClass("treeActive")
-                    }
-                })
-                return false;
-            });
         });
-        var h=$(".treeClick")
-        h.each(function () {
-            if($(this).attr("href")==href){
-                $(this).addClass("treeActive")
-                var title=$(this).text();
-                updateUrl(title,href.split("?")[0])
-                document.title=title;
-            } else{
-                $(this).removeClass("treeActive")
-            }
-        })
         return false;
     });
+    treeClick();
 })
