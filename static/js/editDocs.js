@@ -17,6 +17,15 @@ var froalaOption ={
         'noTableCellBorder-top':'noTableCellBorder-top',
         'noTableCellBorder-bottom':'noTableCellBorder-bottom',
     },
+    linkStyles: {
+        'fr-green': 'Green',
+        'fr-strong': 'Thick',
+        'treeContentClick':'treeContentClick'
+      },
+      linkAttributes: {
+        title: 'Title',
+        onclick:"return true",
+      },
     // disable quick insert
     quickInsertTags: [],
 

@@ -18,22 +18,95 @@
 // 		}
 // 	});
 // });
+var treeClick
 $(function () {
     $(".treeClick").click(function () {
         var href= $(this).attr("href")
         $.get(href+"?type=xhrSon",function(data,std){
-            $("#ArticleCentent").html(data)
+            $("#ArticleCentent").html(data);
+            $(".treeContentClick").click(function(){
+                var href= $(this).attr("href")
+                $.get(href+"?type=xhrSon",function(data,std){
+                    $("#ArticleCentent").html(data);
+                    $(".treeContentClick").click(function(){
+                        var href= $(this).attr("href")
+                        $.get(href+"?type=xhrSon",function(data,std){
+                            $("#ArticleCentent").html(data);
+                        });
+                        var h=$(".treeClick")
+                        h.each(function () {
+                            if($(this).attr("href")==href){
+                                $(this).addClass("treeActive")
+                                var title=$(this).text();
+                                updateUrl(title,href.split("?")[0])
+                                document.title=title;
+                            } else{
+                                $(this).removeClass("treeActive")
+                            }
+                        })
+                        return false;
+                    });
+                });
+                var h=$(".treeClick")
+                h.each(function () {
+                    if($(this).attr("href")==href){
+                        $(this).addClass("treeActive")
+                        var title=$(this).text();
+                        updateUrl(title,href.split("?")[0])
+                        document.title=title;
+                    } else{
+                        $(this).removeClass("treeActive")
+                    }
+                })
+                return false;
+            });
         });
-        var title=$(this).text();
-        // if (title=="FreeFishGo"){
-        //     title="开发文档";
-        // }
-        updateUrl(title,href.split("?")[0])
-        document.title=title;
         var h=$(".treeClick")
         h.each(function () {
-            $(this).removeClass("treeActive")
+            if($(this).attr("href")==href){
+                $(this).addClass("treeActive")
+                var title=$(this).text();
+                updateUrl(title,href.split("?")[0])
+                document.title=title;
+            } else{
+                $(this).removeClass("treeActive")
+            }
         })
-        $(this).addClass("treeActive")
-    })
+    });
+    $(".treeContentClick").click(function(){
+        var href= $(this).attr("href")
+        $.get(href+"?type=xhrSon",function(data,std){
+            $("#ArticleCentent").html(data);
+            $(".treeContentClick").click(function(){
+                var href= $(this).attr("href")
+                $.get(href+"?type=xhrSon",function(data,std){
+                    $("#ArticleCentent").html(data);
+                });
+                var h=$(".treeClick")
+                h.each(function () {
+                    if($(this).attr("href")==href){
+                        $(this).addClass("treeActive")
+                        var title=$(this).text();
+                        updateUrl(title,href.split("?")[0])
+                        document.title=title;
+                    } else{
+                        $(this).removeClass("treeActive")
+                    }
+                })
+                return false;
+            });
+        });
+        var h=$(".treeClick")
+        h.each(function () {
+            if($(this).attr("href")==href){
+                $(this).addClass("treeActive")
+                var title=$(this).text();
+                updateUrl(title,href.split("?")[0])
+                document.title=title;
+            } else{
+                $(this).removeClass("treeActive")
+            }
+        })
+        return false;
+    });
 })
