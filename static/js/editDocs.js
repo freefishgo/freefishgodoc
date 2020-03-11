@@ -123,6 +123,7 @@ $(function(){
             $('#myModal').modal('hide');
         });
     });
+
     $("#editAtc").click(function(){
         var html='<textarea id="ArticleCententArea"></textarea><button id="save" class="btn btn-default">保存</button>';
         $("#ArticleCentent").html(html);
@@ -135,7 +136,7 @@ $(function(){
             var obj={};
             obj.index=nowIndex;
             obj.docsname=$("#docName").text();
-            obj.content=editor.html.get();
+            obj.content=editor.html.get().replace(/<a class="treeContentClick" href="/g,'<a class="treeContentClick" onclick="return false" href="');
             $.post("/docsOperation/UpdateDocContent",obj,function(data,std){
                 editor.destroy();
                 location.href="/docs/"+nowIndex
