@@ -35,6 +35,7 @@ var treeClick=function(){
                     $(this).removeClass("treeActive")
                 }
             })
+            $(document).scrollTop(0);
             return false;
         });
     });
